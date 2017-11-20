@@ -31,4 +31,11 @@ public class OrderActivityBasicTest {
         onView(withId(R.id.quantity_text_view)).check(matches(withText("1")));
         onView(withId(R.id.cost_text_view)).check(matches(withText("£5.00")));
     }
+
+    @Test
+    public void clickDecrementButton_ChangesQuantityAndCost(){
+        onView(withId(R.id.decrement_button)).perform(click());
+        onView(withId(R.id.quantity_text_view)).check(matches(withText("0")));
+        onView(withId(R.id.cost_text_view)).check(matches(withText("$0.00")));
+    }
 }
